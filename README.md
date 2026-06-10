@@ -1,4 +1,6 @@
 # pswGen
+Project Password Generator
+
 Install via
 
 ```bash
