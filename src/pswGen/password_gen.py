@@ -1,17 +1,19 @@
 import string
 import secrets
 
-'''
-Generate a password of the specified length using random letters, digits and punctation.
-'''
 def gen_psw(length: int):
+
+    """
+    Generate a password of the specified length using random letters, digits and punctation.
+    """
     characters = string.ascii_letters + string.digits + string.punctuation
     return ''.join(secrets.choice(characters) for _ in range(length))
 
-'''
-Generate a password of the specified length using the selected parameters.
-'''
 def gen_psw_editable(length=12, digits=True, punctuation=True, uppercase=True):
+
+    """
+    Generate a password of the specified length using the selected parameters.
+    """
 
     chars = string.ascii_lowercase
     if uppercase:
@@ -23,9 +25,6 @@ def gen_psw_editable(length=12, digits=True, punctuation=True, uppercase=True):
 
     return ''.join(secrets.choice(chars) for _ in range(length))
 
-'''
-checks the strength of a passwork based on how long and how complex it is.
-'''
 
 def __has_punctation(text):
     return any(char in string.punctuation for char in text)
@@ -37,6 +36,10 @@ def __has_digits(text):
     return any(char.isdigit() for char in text)
 
 def psw_strength_check(password: str):
+    
+    """
+    checks the strength of a passwork based on how long and how complex it is.
+    """
     score = 0
 
     if len(password) >= 8:
