@@ -10,9 +10,6 @@ requires-python = ">=3.12"
 dependencies = [
 ]
 
-[project.scripts]
-mytool = "password_gen.core:main"
-
 [tool.poetry]
 packages = [{include = "pswGen", from = "src"}]
 
